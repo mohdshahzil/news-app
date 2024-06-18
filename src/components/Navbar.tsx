@@ -10,7 +10,7 @@ const Navbar = () => {
   const formattedDate = today.toLocaleDateString("en-US", options);
   return (
     <>
-      <div className="flex flex-row items-center justify-between p-3">
+      <div className="flex flex-row items-center justify-between p-2 md:p-3">
         <div className="text-3xl font-normal">DAILY SCOOP</div>
         <div className="flex flex-row items-center justify-center gap-4">
           <div className="font-light">{formattedDate}</div>
