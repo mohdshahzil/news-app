@@ -65,5 +65,5 @@ const newsSlice = createSlice({
   },
 });
 
-export const { setCategory,setSearchTerm } = newsSlice.actions;
+export const { setCategory, setSearchTerm } = newsSlice.actions;
 export default newsSlice.reducer;

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CiSearch } from "react-icons/ci";
 import { Input } from "@/components/ui/input";
 import { useAppSelector, useAppDispatch } from "../hooks/typeHooks";
+import GradualSpacing from "./magicui/gradual-spacing";
 import {
   fetchNews,
   setCategory,
@@ -42,7 +43,11 @@ const Navbar = () => {
   return (
     <>
       <div className="flex flex-row items-center justify-between p-2 md:p-3">
-        <div className="text-3xl font-normal">DAILY SCOOP</div>
+        {/* <div className="text-3xl font-normal">DAILY SCOOP</div> */}
+        <GradualSpacing
+          className="font-display text-center text-3xl font-bold tracking-[-0.1em]  text-black dark:text-white md:text-4xl md:leading-[2rem]"
+          text="DAILY SCOOP"
+        />
         <div className="flex flex-row items-center justify-center gap-4">
           <div className="flex gap-1">
             <Input
@@ -51,7 +56,7 @@ const Navbar = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
-            <Button  onClick={handleSearch}>
+            <Button onClick={handleSearch}>
               <CiSearch />
             </Button>
           </div>
