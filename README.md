@@ -43,34 +43,36 @@ Daily Scoop is a news application built using Vite, React, and TypeScript. It fe
 
 ## File Structure
 
-public/
-├── vite.svg
-src/
-├── assets/
-│   ├── react.svg
-├── components/
-│   ├── magicui/
-│   │   ├── gradual-spacing.tsx
-│   ├── ui/
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── input.tsx
-│   │   ├── sonner.tsx
-│   ├── Navbar.tsx
-│   └── NewsList.tsx
-├── hooks/
-│   └── typeHooks.ts
-├── lib/
-│   └── utils.ts
-├── redux/
-│   ├── slices/
-│   │   └── newsSlice.ts
-│   └── store.ts
-├── App.css
-├── App.tsx
-├── index.css
-├── main.tsx
-├── vite-env.d.ts
+## File Structure
+
+├── public
+│   └── vite.svg
+├── src
+│   ├── assets
+│   │   └── react.svg
+│   ├── components
+│   │   ├── magicui
+│   │   │   └── gradual-spacing.tsx
+│   │   ├── ui
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── input.tsx
+│   │   │   └── sonner.tsx
+│   │   ├── Navbar.tsx
+│   │   └── NewsList.tsx
+│   ├── hooks
+│   │   └── typeHooks.ts
+│   ├── lib
+│   │   └── utils.ts
+│   ├── redux
+│   │   ├── slices
+│   │   │   └── newsSlice.ts
+│   │   └── store.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
 ├── .eslintrc.cjs
 ├── .gitignore
 ├── components.json
@@ -80,9 +82,10 @@ src/
 ├── postcss.config.js
 ├── README.md
 ├── tailwind.config.js
-└── tsconfig.json
-└── tsconfig.node.json
+├── tsconfig.json
+├── tsconfig.node.json
 └── vite.config.ts
+
 
 ### Fetching News
 
