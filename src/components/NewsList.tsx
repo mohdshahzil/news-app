@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../hooks/typeHooks";
 import { fetchNews } from "../redux/slices/newsSlice";
+import { FadeLoader } from "react-spinners";
 
 interface Article {
   title: string;
@@ -12,12 +13,21 @@ interface Article {
 const NewsList: React.FC = () => {
   const dispatch = useAppDispatch();
   const news = useAppSelector((state) => state.news.data);
+  const isLoading = useAppSelector((state) => state.news.isLoading);
 
   useEffect(() => {
     dispatch(fetchNews());
   }, [dispatch]);
 
   console.log("News", news);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <FadeLoader color="#000000" loading={true} />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center w-full p-4 gap-4">

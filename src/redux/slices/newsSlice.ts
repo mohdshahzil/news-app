@@ -16,7 +16,7 @@ const initialState: NewsState = {
 
 export const fetchNews = createAsyncThunk("fetchNews", async () => {
   const response = await fetch(
-    "https://gnews.io/api/v4/top-headlines?category=general&apikey=c9afbf03991076d7dee0f5d6d9c6202f&lang=en"
+    "https://gnews.io/api/v4/top-headlines?category=general&apikey=5f9a6060bd6a9e817cda6fdee1059709&lang=en"
   );
   return response.json();
 });
