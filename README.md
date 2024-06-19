@@ -1,30 +1,91 @@
-# React + TypeScript + Vite
+# Daily Scoop News App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Daily Scoop is a news application built using Vite, React, and TypeScript. It fetches top headlines from the GNews API and displays them by category. The app supports search functionality, pagination, and provides a smooth user experience with animations powered by Framer Motion. Tailwind CSS and ShadCN are used for styling and UI components.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Category-Based News**: Users can filter news by various categories such as World, Business, Technology, Sports, Entertainment, Science, and Health.
+- **Search Functionality**: Users can search for news articles by entering keywords.
+- **Animations**: Smooth animations using Framer Motion.
+- **Responsive Design**: Mobile-friendly and responsive design using Tailwind CSS.
+- **State Management**: Redux Toolkit is used for API fetching, state management, loading states, and error handling.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend**: [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [ShadCN](https://shadcn.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **API**: [GNews API](https://gnews.io/)
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/daily-scoop.git
+    cd daily-scoop
+    ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+
+4. **Build for production**:
+    ```bash
+    npm run build
+    ```
+
+## File Structure
+
+├── public
+|   |   ├── vite.svg
+├── src
+|   ├── assets
+|   |   |   ├── react.svg
+|   ├── components
+|   |   ├── magicui
+|   |   |   |   ├── gradual-spacing.tsx
+|   |   ├── ui
+|   |   |   |   ├── button.tsx
+|   |   |   |   ├── card.tsx
+|   |   |   |   ├── input.tsx
+|   |   |   |   ├── sonner.tsx
+|   |   |   ├── Navbar.tsx
+|   |   |   ├── NewsList.tsx
+|   ├── hooks
+|   |   |   ├── typeHooks.ts
+|   ├── lib
+|   |   |   ├── utils.ts
+|   ├── redux
+|   |   ├── slices
+|   |   |   |   ├── newsSlice.ts
+|   |   |   ├── store.ts
+|   |   ├── App.css
+|   |   ├── App.tsx
+|   |   ├── index.css
+|   |   ├── main.tsx
+|   |   ├── vite-env.d.ts
+|   ├── .eslintrc.cjs
+|   ├── .gitignore
+|   ├── components.json
+|   ├── index.html
+|   ├── package-lock.json
+|   ├── package.json
+|   ├── postcss.config.js
+|   ├── README.md
+|   ├── tailwind.config.js
+|   ├── tsconfig.json
+|   ├── tsconfig.node.json
+|   ├── vite.config.ts
+
+
+### Fetching News
+
+- **By Category**: Click on any category button to fetch news articles for that category.
+- **Search**: Enter a keyword in the search input and click the search icon to fetch news articles matching the keyword.
