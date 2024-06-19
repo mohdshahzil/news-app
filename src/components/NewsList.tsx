@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../hooks/typeHooks";
 import { fetchNews } from "../redux/slices/newsSlice";
 import { FadeLoader } from "react-spinners";
