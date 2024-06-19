@@ -43,7 +43,6 @@ const Navbar = () => {
   return (
     <>
       <div className="flex flex-row items-center justify-between p-2 md:p-3">
-        {/* <div className="text-3xl font-normal">DAILY SCOOP</div> */}
         <GradualSpacing
           className="font-display text-center text-3xl font-bold tracking-[-0.1em]  text-black dark:text-white md:text-4xl md:leading-[2rem]"
           text="DAILY SCOOP"
