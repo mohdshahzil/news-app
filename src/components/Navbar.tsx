@@ -63,7 +63,7 @@ const Navbar = () => {
         </div>
       </div>
       <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-      <div className="flex items-center justify-center text-lg gap-1 md:gap-5 p-2 md:p-3">
+      <div className="md:flex grid grid-cols-4 items-center justify-center text-lg gap-1 md:gap-5 p-2 md:p-3">
         {categories.map((category) => (
           <Button
             key={category}
