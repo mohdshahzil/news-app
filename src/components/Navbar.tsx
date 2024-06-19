@@ -2,13 +2,24 @@ import { Button } from "@/components/ui/button";
 import { CiSearch } from "react-icons/ci";
 import { Input } from "@/components/ui/input";
 import { useAppSelector, useAppDispatch } from "../hooks/typeHooks";
-import { fetchNews, setCategory } from "../redux/slices/newsSlice";
+import {
+  fetchNews,
+  setCategory,
+  setSearchTerm,
+} from "../redux/slices/newsSlice";
+import { useState } from "react";
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const selectedCategory = useAppSelector((state) => state.news.category);
+  const searchTerm = useAppSelector((state) => state.news.searchTerm);
+  const [inputValue, setInputValue] = useState(searchTerm);
+  const handleSearch = () => {
+    dispatch(setSearchTerm(inputValue));
+    dispatch(fetchNews({ category: selectedCategory, searchTerm: inputValue }));
+  };
   const handleCategoryClick = (category: string) => {
     dispatch(setCategory(category));
-    dispatch(fetchNews(category));
+    dispatch(fetchNews({ category, searchTerm }));
   };
   const today = new Date();
   const options: Intl.DateTimeFormatOptions = {
@@ -33,9 +44,14 @@ const Navbar = () => {
       <div className="flex flex-row items-center justify-between p-2 md:p-3">
         <div className="text-3xl font-normal">DAILY SCOOP</div>
         <div className="flex flex-row items-center justify-center gap-4">
-          <div className="flex">
-            <Input className="w-6  md:w-auto" placeholder="Search..." />
-            <Button variant="ghost">
+          <div className="flex gap-1">
+            <Input
+              className="w-6  md:w-auto"
+              placeholder="Search..."
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <Button  onClick={handleSearch}>
               <CiSearch />
             </Button>
           </div>
@@ -47,10 +63,10 @@ const Navbar = () => {
         {categories.map((category) => (
           <Button
             key={category}
-            variant="ghost"
+            variant="outline"
             onClick={() => handleCategoryClick(category)}
             className={
-              selectedCategory === category ? "bg-blue-500 text-white" : ""
+              selectedCategory === category ? "bg-primary text-white" : ""
             }
           >
             {category.charAt(0).toUpperCase() + category.slice(1)}

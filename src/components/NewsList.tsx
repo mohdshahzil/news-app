@@ -15,9 +15,9 @@ const NewsList: React.FC = () => {
   const news = useAppSelector((state) => state.news.data);
   const isLoading = useAppSelector((state) => state.news.isLoading);
   const category = useAppSelector((state) => state.news.category);
-
+  const searchTerm = useAppSelector((state) => state.news.searchTerm);
   useEffect(() => {
-    dispatch(fetchNews(category));
+    dispatch(fetchNews({ category, searchTerm }));
   }, [dispatch, category]);
 
   console.log("News", news);
