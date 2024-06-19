@@ -64,9 +64,9 @@ const Navbar = () => {
       </div>
       <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
-      <div className="flex flex-row items-center justify-between  gap-2 p-2">
+      <div className="flex flex-row items-center justify-center  gap-2 p-2">
         <Input
-          className="  "
+          className="md:w-4/6 w-full"
           placeholder="Search..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
