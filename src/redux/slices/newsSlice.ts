@@ -6,6 +6,7 @@ interface NewsState {
   data: any | null;
   isError: boolean;
   category: string;
+  searchTerm: string;
 }
 
 // Define the initial state using that type
@@ -14,15 +15,24 @@ const initialState: NewsState = {
   data: null,
   isError: false,
   category: "general",
-  
+  searchTerm: "",
 };
 
-export const fetchNews = createAsyncThunk("fetchNews", async (category : string) => {
-  const response = await fetch(
-    `https://gnews.io/api/v4/top-headlines?category=${category}&apikey=4c88f10d45f7203dadf621c5705bd177&lang=en`
-  );
-  return response.json();
-});
+export const fetchNews = createAsyncThunk(
+  "fetchNews",
+  async ({
+    category,
+    searchTerm,
+  }: {
+    category: string;
+    searchTerm: string;
+  }) => {
+    const response = await fetch(
+      `https://gnews.io/api/v4/top-headlines?category=${category}&q=${searchTerm}&apikey=4c88f10d45f7203dadf621c5705bd177&lang=en`
+    );
+    return response.json();
+  }
+);
 
 const newsSlice = createSlice({
   name: "news",
@@ -30,6 +40,9 @@ const newsSlice = createSlice({
   reducers: {
     setCategory(state, action: PayloadAction<string>) {
       state.category = action.payload;
+    },
+    setSearchTerm(state, action: PayloadAction<string>) {
+      state.searchTerm = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -52,5 +65,5 @@ const newsSlice = createSlice({
   },
 });
 
-export const { setCategory } = newsSlice.actions;
+export const { setCategory,setSearchTerm } = newsSlice.actions;
 export default newsSlice.reducer;
