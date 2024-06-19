@@ -14,10 +14,11 @@ const NewsList: React.FC = () => {
   const dispatch = useAppDispatch();
   const news = useAppSelector((state) => state.news.data);
   const isLoading = useAppSelector((state) => state.news.isLoading);
+  const category = useAppSelector((state) => state.news.category);
 
   useEffect(() => {
-    dispatch(fetchNews());
-  }, [dispatch]);
+    dispatch(fetchNews(category));
+  }, [dispatch, category]);
 
   console.log("News", news);
 
