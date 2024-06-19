@@ -40,53 +40,7 @@ Daily Scoop is a news application built using Vite, React, and TypeScript. It fe
     ```bash
     npm run build
     ```
-
-## File Structure
-
-## File Structure
-
-├── public
-│   └── vite.svg
-├── src
-│   ├── assets
-│   │   └── react.svg
-│   ├── components
-│   │   ├── magicui
-│   │   │   └── gradual-spacing.tsx
-│   │   ├── ui
-│   │   │   ├── button.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── input.tsx
-│   │   │   └── sonner.tsx
-│   │   ├── Navbar.tsx
-│   │   └── NewsList.tsx
-│   ├── hooks
-│   │   └── typeHooks.ts
-│   ├── lib
-│   │   └── utils.ts
-│   ├── redux
-│   │   ├── slices
-│   │   │   └── newsSlice.ts
-│   │   └── store.ts
-│   ├── App.css
-│   ├── App.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── vite-env.d.ts
-├── .eslintrc.cjs
-├── .gitignore
-├── components.json
-├── index.html
-├── package-lock.json
-├── package.json
-├── postcss.config.js
-├── README.md
-├── tailwind.config.js
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
-
-
+    
 ### Fetching News
 
 - **By Category**: Click on any category button to fetch news articles for that category.
