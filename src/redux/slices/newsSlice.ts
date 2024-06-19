@@ -5,6 +5,7 @@ interface NewsState {
   isLoading: boolean;
   data: any | null;
   isError: boolean;
+  category: string;
 }
 
 // Define the initial state using that type
@@ -12,11 +13,13 @@ const initialState: NewsState = {
   isLoading: false,
   data: null,
   isError: false,
+  category: "general",
+  
 };
 
-export const fetchNews = createAsyncThunk("fetchNews", async () => {
+export const fetchNews = createAsyncThunk("fetchNews", async (category : string) => {
   const response = await fetch(
-    "https://gnews.io/api/v4/top-headlines?category=general&apikey=5f9a6060bd6a9e817cda6fdee1059709&lang=en"
+    `https://gnews.io/api/v4/top-headlines?category=${category}&apikey=4c88f10d45f7203dadf621c5705bd177&lang=en`
   );
   return response.json();
 });
@@ -24,7 +27,11 @@ export const fetchNews = createAsyncThunk("fetchNews", async () => {
 const newsSlice = createSlice({
   name: "news",
   initialState,
-  reducers: {},
+  reducers: {
+    setCategory(state, action: PayloadAction<string>) {
+      state.category = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchNews.pending, (state) => {
       state.isLoading = true;
@@ -35,7 +42,7 @@ const newsSlice = createSlice({
       (state, action: PayloadAction<any>) => {
         state.isLoading = false;
         state.data = action.payload;
-        // console.log("Data", action.payload);
+        console.log("Data", action.payload);
       }
     );
     builder.addCase(fetchNews.rejected, (state, action) => {
@@ -45,4 +52,5 @@ const newsSlice = createSlice({
   },
 });
 
+export const { setCategory } = newsSlice.actions;
 export default newsSlice.reducer;
