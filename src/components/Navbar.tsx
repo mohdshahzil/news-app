@@ -49,7 +49,7 @@ const Navbar = () => {
         />
         <div className="flex flex-row items-center justify-center gap-4">
           <div className="flex gap-1">
-            <Input
+            {/* <Input
               className="w-6  md:w-auto"
               placeholder="Search..."
               value={inputValue}
@@ -57,12 +57,24 @@ const Navbar = () => {
             />
             <Button onClick={handleSearch}>
               <CiSearch />
-            </Button>
+            </Button> */}
           </div>
           <div className="font-light">{formattedDate}</div>
         </div>
       </div>
       <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+
+      <div className="flex flex-row items-center justify-between  gap-2 p-2">
+        <Input
+          className="  "
+          placeholder="Search..."
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <Button onClick={handleSearch}>
+          <CiSearch />
+        </Button>
+      </div>
       <div className="md:flex grid grid-cols-4 items-center justify-center text-lg gap-1 md:gap-5 p-2 md:p-3">
         {categories.map((category) => (
           <Button
