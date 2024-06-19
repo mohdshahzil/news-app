@@ -44,36 +44,6 @@ const Navbar = () => {
       </div>
       <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"></hr>
       <div className="flex items-center justify-center text-lg gap-1 md:gap-5 p-2 md:p-3">
-        {/* <Button variant="ghost" onClick={() => handleCategoryClick("general")}>
-          General
-        </Button>
-        <Button variant="ghost" onClick={() => handleCategoryClick("world")}>
-          World
-        </Button>
-        <Button variant="ghost" onClick={() => handleCategoryClick("business")}>
-          Business
-        </Button>
-        <Button
-          variant="ghost"
-          onClick={() => handleCategoryClick("technology")}
-        >
-          Technology
-        </Button>
-        <Button variant="ghost" onClick={() => handleCategoryClick("sports")}>
-          Sports
-        </Button>
-        <Button
-          variant="ghost"
-          onClick={() => handleCategoryClick("entertainment")}
-        >
-          Entertainment
-        </Button>
-        <Button variant="ghost" onClick={() => handleCategoryClick("science")}>
-          Science
-        </Button>
-        <Button variant="ghost" onClick={() => handleCategoryClick("health")}>
-          Health
-        </Button> */}
         {categories.map((category) => (
           <Button
             key={category}
