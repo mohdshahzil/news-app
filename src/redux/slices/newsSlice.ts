@@ -28,7 +28,7 @@ export const fetchNews = createAsyncThunk(
     searchTerm: string;
   }) => {
     const response = await fetch(
-      `https://gnews.io/api/v4/top-headlines?category=${category}&q=${searchTerm}&apikey=4c88f10d45f7203dadf621c5705bd177f&lang=en`
+      `https://gnews.io/api/v4/top-headlines?category=${category}&q=${searchTerm}&apikey=4c88f10d45f7203dadf621c5705bd177&lang=en`
     );
     return response.json();
   }
